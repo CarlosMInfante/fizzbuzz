@@ -16,7 +16,9 @@ function getValues() {
 
         //callfizzBuzz
         let fbArray = FizzBuzz(fizzValue, buzzValue);
-     
+        //Call displayData and write values to the screen
+        displayData(fbArray);
+
     } else {
         alert("You must enter numbers")
     }   
@@ -59,11 +61,32 @@ function fizzBuzz(fizzValue, buzzValue) {
     returnArray;
 
 }
-
+//Loop over the aray and create a tablerow for each idem.
 function displayData(fbArray) {
     
-    //Loop over the aray and create a tablerow for each idem.
+    //Get the table body element from the page.
+    let tableBody = document.getElementById("results");
 
+    //Get the template row
+    let templateRow - document.getElementById("fbTemplate");
+
+    //Clear the table first
+    tableBody.innerHTML = "";
+
+    for (let index = 0; index < fbArray.length; index += 5) {
+        
+        let tableRow = document.importNode(templateRow.content, true);
+
+        //Grab just the td tags and put into array.
+        let rowCols = tableRow.querySelectorAll("td");
+        rowCols[0].textContent = fbData[i];
+        rowCols[1].textContent = fbData[i+1];
+        rowCols[2].textContent = fbData[i+2];
+        rowCols[3].textContent = fbData[i+3];
+        rowCols[4].textContent = fbData[i+4];
+
+        tableBody.appendChild(tableRow);
+    }
     //Add all the rows to the table.
 
 }
