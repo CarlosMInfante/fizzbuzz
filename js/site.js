@@ -15,7 +15,7 @@ function getValues() {
     if(Number.isInteger(fizzValue)  && Number.isInteger(buzzValue)){
 
         //callfizzBuzz
-        let fbArray = FizzBuzz(fizzValue, buzzValue);
+        let fbArray = fizzBuzz(fizzValue, buzzValue);
         //Call displayData and write values to the screen
         displayData(fbArray);
 
@@ -31,7 +31,7 @@ function fizzBuzz(fizzValue, buzzValue) {
     let returnArray = [];
 
     //loop from 1 to 100.
-    for (let i = 1; index <= 100; i++)1{
+    for (let i = 1; i <= 100; i++){
           //Check the current in three steps.
         //Check to see if divisible by Both (3 and 5)
         //If so, push 'FizzBuzz' into an array and not the number.
@@ -58,7 +58,7 @@ function fizzBuzz(fizzValue, buzzValue) {
         }        
     }
 
-    returnArray;
+    return returnArray;
 
 }
 //Loop over the aray and create a tablerow for each idem.
@@ -68,7 +68,7 @@ function displayData(fbArray) {
     let tableBody = document.getElementById("results");
 
     //Get the template row
-    let templateRow - document.getElementById("fbTemplate");
+    let templateRow = document.getElementById("fbTemplate");
 
     //Clear the table first
     tableBody.innerHTML = "";
@@ -79,15 +79,27 @@ function displayData(fbArray) {
 
         //Grab just the td tags and put into array.
         let rowCols = tableRow.querySelectorAll("td");
-        rowCols[0].textContent = fbData[i];
-        rowCols[1].textContent = fbData[i+1];
-        rowCols[2].textContent = fbData[i+2];
-        rowCols[3].textContent = fbData[i+3];
-        rowCols[4].textContent = fbData[i+4];
 
+        rows[0].classList.add(fbArray[index]);
+        rowCols[0].textContent = fbArray[index];
+
+        rows[1].classList.add(fbArray[index+1]);
+        rowCols[1].textContent = fbArray[index+1];
+
+        rows[2].classList.add(fbArray[index+2]);
+        rowCols[2].textContent = fbArray[index+2];
+
+        rows[3].classList.add(fbArray[index+3]);
+        rowCols[3].textContent = fbArray[index+3];
+
+        rows[4].classList.add(fbArray[index+4]);
+        rowCols[4].textContent = fbArray[index+4];
+
+
+        //Add all the rows to the table.
         tableBody.appendChild(tableRow);
     }
-    //Add all the rows to the table.
+    
 
 }
 
