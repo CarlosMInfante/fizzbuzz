@@ -48,11 +48,13 @@ footer .social>a:hover{
 }
 
 .Fizz{
-    color: #4e6600;
+    color: #84f601;
+    font-weight: bold;
 }
 
 .Buzz{
-    color: #064f80;
+    color: #ab08eb;
+    font-weight: bold;
 }
 
 .FizzBuzz{
